@@ -5,24 +5,28 @@ body {
     height: 100vh;
 }
 
+@font-face{
+        font-family: Roboto-Light;
+        src: url('fonts/Roboto-Light.ttf');
+}
+
+@font-face{
+    font-family: Roboto-Regular;
+    src: url('fonts/Roboto-Regular.ttf');
+}
+
 .form {
     position: absolute;
-    /*left: 26.56%;
-    right: 26.46%;
-    top: 4.04%;
-    bottom: 44.92%;
-*/
 
     top: 4.04%;
     width: 481px;
     height: 392px;
-    
-    /* Color/Neutral/5 - Grey 10% */
 
     background: #F7F5F9;
     border-radius: 12px;
 
 }
+
 
 .form_title {
     position: realtive;
@@ -33,12 +37,11 @@ body {
     left: 312px;
     top: 71px;
 
-    font-family: Roboto;
+    font-family: Roboto-Regular;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
     line-height: 20px;
-    /* identical to box height, or 83% */
 
     display: flex;
     align-items: center;
@@ -55,30 +58,39 @@ body {
     height: 48px;
     width: 401px;
     margin-left:40px;
-    margin-right: 40px;
+    
     margin-bottom: 25px;
-    font-family: Roboto;
+    font-family: Roboto-Light;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
-    line-height: 20px;
-    
-   /* display: flex;*/
     align-items: center;
     align-content: center;
-
     border-radius: 6px;
+    border-width: 0px;
+    padding-left: 15px;
+
 } 
 
-/*
-.form_button {
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
+::-webkit-input-placeholder {color:#D0C9D6;}
+::-moz-placeholder          {color:#D0C9D6;}/* Firefox 19+ */
+:-moz-placeholder           {color:#D0C9D6;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#D0C9D6;}
 
+.form_button {
+    position: relative;
+    width: 401px;
+    height: 48px;
 
     background: #6979F8;
     border-radius: 6px;
-}*/
+    margin-left: 40px;
+
+    font-family: Roboto-Light;
+    font-style: normal;
+    color:#FFFFFF;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 22px;
+    border-width: 0px;
+}
