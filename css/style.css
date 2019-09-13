@@ -1,0 +1,96 @@
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@font-face{
+        font-family: Roboto-Light;
+        src: url('fonts/Roboto-Light.ttf');
+}
+
+@font-face{
+    font-family: Roboto-Regular;
+    src: url('fonts/Roboto-Regular.ttf');
+}
+
+.form {
+    position: absolute;
+
+    top: 4.04%;
+    width: 481px;
+    height: 392px;
+
+    background: #F7F5F9;
+    border-radius: 12px;
+
+}
+
+
+.form_title {
+    position: realtive;
+    margin-left:40px;
+    margin-top: 40px;
+    width: 168px;
+    height: 20px;
+    left: 312px;
+    top: 71px;
+
+    font-family: Roboto-Regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 20px;
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    color: #3B3D43;
+
+}
+
+
+.form_input {
+    position: relative;
+
+
+    height: 48px;
+    width: 401px;
+    margin-left:40px;
+    
+    margin-bottom: 25px;
+    font-family: Roboto-Light;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    align-items: center;
+    align-content: center;
+    border-radius: 6px;
+    border-width: 0px;
+    padding-left: 15px;
+
+} 
+
+::-webkit-input-placeholder {color:#D0C9D6;}
+::-moz-placeholder          {color:#D0C9D6;}/* Firefox 19+ */
+:-moz-placeholder           {color:#D0C9D6;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#D0C9D6;}
+
+.form_button {
+    position: relative;
+    width: 401px;
+    height: 48px;
+
+    background: #6979F8;
+    border-radius: 6px;
+    margin-left: 40px;
+
+    font-family: Roboto-Light;
+    font-style: normal;
+    color:#FFFFFF;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 22px;
+    border-width: 0px;
+}
