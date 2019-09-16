@@ -6,18 +6,32 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form class="form">
+    <form class="form" name="form" onSubmit="return validate();">
         <h1 class="form_title">Задать вопрос</h1>
         <div>
-            <input class="form_input" placeholder="Фамилия Имя Отчество *">
+            <input class="name" id="name" placeholder="Фамилия Имя Отчество *">
         </div>
         <div>
-            <input class="form_input" placeholder="Телефон *">           
+            <input class="phone" id="phone" placeholder="Телефон *">           
         </div>
         <div>
-            <input class="form_input"placeholder="Email">   
+            <input class="email" id="email" placeholder="Email">   
         </div>
-        <button class="form_button">ОТПРАВИТЬ ЗАПРОС</button>
+        <button type="submit">ОТПРАВИТЬ ЗАПРОС</button>
     </form>
+
+    <script type="text/javascript">
+        function validate(){
+            var name=document.getElementById("name").value;
+            var phone=document.getElementById("phone").value;
+            var email=document.getElementById("email").value;
+            alert(name);
+            alert(phone);
+            alert(email);
+            return false;
+        }
+
+    </script>
+    
 </body>
 </html>
