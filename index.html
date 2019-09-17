@@ -4,34 +4,80 @@
     <meta charset="UTF-8">
     <title>Тестовое задание</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-    <form class="form" name="form" onSubmit="return validate();">
+    <form class="form" name="form" onSubmit="return validate();" action="https://digital-spectr.com/ac/academy.php" method="post">
         <h1 class="form_title">Задать вопрос</h1>
         <div>
-            <input class="name" id="name" placeholder="Фамилия Имя Отчество *">
+            <input id="name" name="name" placeholder="Фамилия Имя Отчество *">
         </div>
         <div>
-            <input class="phone" id="phone" placeholder="Телефон *">           
+            <input id="phone"  name="phone" placeholder="Телефон *">           
         </div>
         <div>
-            <input class="email" id="email" placeholder="Email">   
+            <input  id="email"  name="email" placeholder="Email">   
         </div>
         <button type="submit">ОТПРАВИТЬ ЗАПРОС</button>
     </form>
 
     <script type="text/javascript">
         function validate(){
-            var name=document.getElementById("name").value;
-            var phone=document.getElementById("phone").value;
-            var email=document.getElementById("email").value;
-            alert(name);
-            alert(phone);
-            alert(email);
+            var name=document.getElementById("name");
+            var phone=document.getElementById("phone");
+            var email=document.getElementById("email");
+            var nameRes=nameValidation(name) ;
+            var phoneRes=phoneValidation(phone);
+            var emailRes=emailValidation(email);
+                if (nameRes && phoneRes && emailRes)
+                {           
+                    return true;
+                }
+            alert("Некорректный ввод данных");    
+            //name.className = name.className.replace(" error", "");
             return false;
         }
 
+        function nameValidation(name){
+            var symbols=/^[А-Яа-я- \t]+$/;
+            if (name.value.match(symbols))
+            {
+                return true;
+            }
+            name.className = name.className + " error";
+            return false;
+
+        }
+
+        function phoneValidation(phone){
+            var symbols=/^[0-9 +-]+$/; 
+            if (phone.value.match(symbols))
+            {
+                return true;
+            }
+            phone.className=phone.className+"error";
+            return false;
+
+        }
+        function emailValidation(email){
+            var symbols=/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
+            if (email.value.match(symbols))
+            {
+                return true;
+            }
+            
+            email.className=email.className+"error";
+            return false;
+        }
     </script>
+
+<script>
+        name.onclick=function (){
+            name.style.display="none";
+            //name.className=name.className.replace("error","");
+        }
+</script>
+
     
 </body>
 </html>
