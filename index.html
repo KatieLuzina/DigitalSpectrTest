@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <title>Тестовое задание</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
-    <form class="form" name="form" onSubmit="return validate();" action="https://digital-spectr.com/ac/academy.php" method="post">
+    <form class="form" name="form" onsubmit="return validate();" action="https://digital-spectr.com/ac/academy.php" method="post">
         <h1 class="form_title">Задать вопрос</h1>
         <div>
-            <input id="name" name="name" placeholder="Фамилия Имя Отчество *">
+            <input id="name" name="name" class="name" onfocus="removeRedBorder('name')"   type="name" placeholder="Фамилия Имя Отчество *">
         </div>
         <div>
-            <input id="phone"  name="phone" placeholder="Телефон *">           
+            <input id="phone"  name="phone" type="phone" onfocus="removeRedBorder('phone')" placeholder="Телефон *">           
         </div>
         <div>
-            <input  id="email"  name="email" placeholder="Email">   
+            <input  id="email"  name="email" onfocus="removeRedBorder('email')" placeholder="Email">   
         </div>
         <button type="submit">ОТПРАВИТЬ ЗАПРОС</button>
     </form>
@@ -29,12 +28,12 @@
             var nameRes=nameValidation(name) ;
             var phoneRes=phoneValidation(phone);
             var emailRes=emailValidation(email);
+
                 if (nameRes && phoneRes && emailRes)
                 {           
                     return true;
                 }
             alert("Некорректный ввод данных");    
-            //name.className = name.className.replace(" error", "");
             return false;
         }
 
@@ -69,15 +68,14 @@
             email.className=email.className+"error";
             return false;
         }
+
+
+        function removeRedBorder(field){
+            fieldName = document.getElementById(field);
+            fieldName.className=fieldName.className.replace("error","");
+            return 0;
+        }
     </script>
 
-<script>
-        name.onclick=function (){
-            name.style.display="none";
-            //name.className=name.className.replace("error","");
-        }
-</script>
-
-    
 </body>
 </html>
